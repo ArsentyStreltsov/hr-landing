@@ -1,0 +1,48 @@
+export const employeeProfiles = [
+  {
+    id: 'anna',
+    name: 'Анна',
+    role: 'Marketing',
+    city: 'Москва',
+    points: 2480,
+    achievements: 12,
+    team: 'Marketing',
+    teamRank: 2,
+    teamPoints: 18430,
+    focus: ['Бренд-задания', 'Photo challenge', 'Голосование номинаций'],
+    accent: '#FF6B4A',
+  },
+  {
+    id: 'maxim',
+    name: 'Максим',
+    role: 'IT',
+    city: 'Казань',
+    points: 3120,
+    achievements: 15,
+    team: 'Product',
+    teamRank: 1,
+    teamPoints: 22150,
+    focus: ['Техквест', 'Daily challenge', 'LIVE quiz'],
+    accent: '#2DD4BF',
+  },
+  {
+    id: 'sergey',
+    name: 'Сергей',
+    role: 'Sales',
+    city: 'Екатеринбург',
+    points: 1890,
+    achievements: 9,
+    team: 'Sales',
+    teamRank: 3,
+    teamPoints: 16780,
+    focus: ['Реферальная механика', 'Командный рейтинг', 'Прогноз эфира'],
+    accent: '#F0B429',
+  },
+]
+
+export const leaderboard = [
+  { place: 1, team: 'Product', points: 22150 },
+  { place: 2, team: 'Marketing', points: 18430 },
+  { place: 3, team: 'Sales', points: 16780 },
+  { place: 4, team: 'Operations', points: 14220 },
+]
