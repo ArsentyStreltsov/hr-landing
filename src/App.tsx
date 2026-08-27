@@ -31,9 +31,9 @@ export default function App() {
         <Header />
         <main>
           <Hero />
+          <PlatformOverview />
           <OfflineVsPlatform />
           <UseCases />
-          <PlatformOverview />
           <EmployeeJourney />
           <GameMechanics />
           <LiveExperience />
