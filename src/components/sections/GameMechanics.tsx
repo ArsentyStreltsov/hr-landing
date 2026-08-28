@@ -14,8 +14,8 @@ export function GameMechanics() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Игровые механики"
-          title="Не просто посмотреть корпоратив — участвовать в нём"
-          subtitle="Выберите механику и потыкайте демо прямо здесь. Это демонстрационные мини-игры для прототипа."
+          title="Быстрые геймификации — потыкайте демо"
+          subtitle="Квизы, колесо, memory и другие механики из предподготовленных шаблонов. Подойдут для HR, sales, обучения и внутренних конкурсов."
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_380px]">

@@ -1,9 +1,17 @@
 import { useMemo, useState } from 'react'
 import { configuratorOptions } from '../../data/annualActivities'
+import { brand } from '../../data/brand'
 import { useContactModal } from '../../context/ContactModalContext'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
+
+function estimateTimeline(moduleCount: number) {
+  if (moduleCount <= 1) return '~1 месяц'
+  if (moduleCount <= 3) return '~2–3 месяца'
+  if (moduleCount <= 5) return '~3–4 месяца'
+  return '~5–6 месяцев'
+}
 
 export function HRProjectConfigurator() {
   const { openModal } = useContactModal()
@@ -56,6 +64,7 @@ export function HRProjectConfigurator() {
         modules.includes('задания') ? 'Задания' : null,
         modules.includes('пользовательский контент') ? 'UGC' : null,
       ].filter(Boolean) as string[],
+      timeline: estimateTimeline(modules.length),
     }
   }, [task, size, modules, integration])
 
@@ -65,7 +74,7 @@ export function HRProjectConfigurator() {
         <SectionHeading
           eyebrow="Главный интерактив"
           title="Соберите пример HR-проекта"
-          subtitle="Конфигуратор демонстрационный и не рассчитывает настоящую стоимость."
+          subtitle={`Конфигуратор демонстрационный: не считает стоимость, но помогает собрать пример сценария. ${brand.templatesNote}`}
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -127,12 +136,15 @@ export function HRProjectConfigurator() {
                 </span>
               ))}
             </div>
+            <p className="mt-4 text-sm text-white/75">
+              Примерный срок разработки {concept.timeline}
+            </p>
             <Button
               variant="accent"
               className="mt-8 w-full"
               onClick={() =>
                 openModal(
-                  `Хочу обсудить проект: ${concept.title}. Модули: ${concept.modules.join(', ')}.`,
+                  `Хочу обсудить проект: ${concept.title}. Модули: ${concept.modules.join(', ')}. Срок: ${concept.timeline}.`,
                 )
               }
             >

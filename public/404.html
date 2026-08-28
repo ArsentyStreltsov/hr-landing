@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>hr-promo</title>
+    <script>
+      sessionStorage.setItem('redirect', location.pathname + location.search + location.hash)
+      location.replace(document.querySelector('base')?.href || '/')
+    </script>
+  </head>
+  <body></body>
+</html>

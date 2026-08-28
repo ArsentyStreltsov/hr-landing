@@ -43,7 +43,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 }}
-            className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg"
+            className="mt-5 max-w-md text-base leading-relaxed text-ink-soft sm:text-lg"
           >
             {brand.heroSubtitle}
           </motion.p>
@@ -53,21 +53,13 @@ export function Hero() {
             transition={{ delay: 0.18 }}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <Button variant="accent" onClick={() => openModal('Хочу обсудить HR-проект')}>
+            <Button variant="accent" onClick={() => openModal('Хочу обсудить проект')}>
               {brand.primaryCta}
             </Button>
             <Button variant="secondary" onClick={() => document.querySelector('#capabilities')?.scrollIntoView({ behavior: 'smooth' })}>
               {brand.secondaryCta}
             </Button>
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.28 }}
-            className="mt-6 max-w-lg text-sm text-muted"
-          >
-            {brand.heroNote}
-          </motion.p>
         </div>
 
         <motion.div

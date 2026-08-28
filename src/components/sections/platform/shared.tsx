@@ -1,15 +1,16 @@
 import { ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import type { PlatformAudience } from '../../../data/platformAudiences'
 
 export function SectionProjectsButton() {
   return (
-    <button
-      type="button"
+    <Link
+      to="/cases"
       className="inline-flex shrink-0 items-center gap-2 self-start rounded-2xl border border-line bg-white px-4 py-3 text-sm font-semibold text-brand shadow-soft transition hover:border-brand/30 hover:bg-paper sm:self-auto"
     >
-      Все проекты
+      Все кейсы
       <ArrowUpRight size={16} />
-    </button>
+    </Link>
   )
 }
 
@@ -54,7 +55,7 @@ export function CaseCard({ audience }: { audience: PlatformAudience }) {
           {caseStudy.description}
         </p>
         <p className="mt-auto pt-4 text-xs text-muted">
-          Превью кейса. Полные материалы появятся в разделе проектов.
+          Превью кейса. Полные материалы — в разделе кейсов.
         </p>
       </div>
     </article>

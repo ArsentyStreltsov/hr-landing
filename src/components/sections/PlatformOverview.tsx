@@ -33,7 +33,7 @@ export function PlatformOverview() {
   }
 
   return (
-    <section className="section-pad relative py-16 lg:py-24">
+    <section id="capabilities" className="section-pad relative py-16 lg:py-24">
       <div className="container-page">
         {layout === 'a' ? <AudiencesVariant /> : null}
         {layout === 'b' ? <TagCloudVariant /> : null}

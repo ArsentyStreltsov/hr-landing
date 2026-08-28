@@ -16,7 +16,7 @@ export function AudiencesVariant() {
         <SectionHeading
           eyebrow="Продукт"
           title="Всё корпоративное событие — внутри одного digital-пространства"
-          subtitle="Не одна мини-игра, а полноценная корпоративная digital-среда под разные задачи."
+          subtitle="Не одна мини-игра, а digital-среда под HR, sales, обучение и внутренние промо. HR — большая часть аудитории, но не единственная."
         />
         <SectionProjectsButton />
       </div>
