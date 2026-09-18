@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { gameMechanics } from '../../data/gameMechanics'
+import { useContactModal } from '../../context/ContactModalContext'
 import { GameDemoHost } from '../games/GameDemoHost'
 import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function GameMechanics() {
+  const { openModal } = useContactModal()
   const playable = gameMechanics.filter((g) => g.demo)
   const [activeId, setActiveId] = useState(playable[0]?.id ?? gameMechanics[0].id)
   const active = gameMechanics.find((g) => g.id === activeId) ?? gameMechanics[0]
@@ -14,8 +16,8 @@ export function GameMechanics() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Игровые механики"
-          title="Быстрые геймификации — потыкайте демо"
-          subtitle="Квизы, колесо, memory и другие механики из предподготовленных шаблонов. Подойдут для HR, sales, обучения и внутренних конкурсов."
+          title="Попробуйте готовые механики"
+          subtitle="Берём проверенную игровую основу, брендируем и связываем её с баллами, рейтингом и вашей задачей."
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_380px]">
@@ -52,13 +54,29 @@ export function GameMechanics() {
                     </p>
                     <div className="mt-3 hidden text-xs group-hover:block">
                       <p className={selected ? 'text-accent-2' : 'text-muted'}>
-                        Для HR: {item.hrTasks.join(', ')}
+                        Подходит для: {item.hrTasks.join(', ')}
                       </p>
                     </div>
                   </button>
                 </Reveal>
               )
             })}
+            <Reveal>
+              <button
+                type="button"
+                onClick={() =>
+                  openModal('Хочу узнать больше о доступных механиках и получить презентацию.')
+                }
+                className="flex h-full min-h-36 w-full flex-col justify-between rounded-[1.3rem] bg-accent p-4 text-left text-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift"
+              >
+                <span className="text-xs font-bold uppercase tracking-wider text-white/70">
+                  И это не всё
+                </span>
+                <span className="font-display text-lg font-extrabold">
+                  Покажем другие механики под вашу задачу →
+                </span>
+              </button>
+            </Reveal>
           </div>
 
           <Reveal className="lg:sticky lg:top-24 lg:self-start">

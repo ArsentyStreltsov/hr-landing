@@ -39,8 +39,16 @@ export function Header() {
       )}
     >
       <div className="container-page section-pad flex h-16 items-center justify-between lg:h-20">
-        <Link to="/" className="font-display text-xl font-extrabold tracking-tight text-brand">
-          {brand.name}
+        <Link
+          to="/"
+          className="inline-flex rounded-xl bg-ink px-3 py-1.5"
+          aria-label={`${brand.name} — на главную`}
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}deep-logo.png`}
+            alt="Deep creative agency"
+            className="h-8 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">

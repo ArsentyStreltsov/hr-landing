@@ -18,7 +18,7 @@ export function Integrations() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Интеграции"
-          title="Подключаемся к вашей инфраструктуре — куда технически можно"
+          title="Подключаемся к любым API"
           subtitle={integrationPrinciple}
         />
 
@@ -29,7 +29,7 @@ export function Integrations() {
           <div className="relative mx-auto flex max-w-3xl flex-col items-center">
             <div className="rounded-2xl bg-white px-5 py-4 text-center text-brand shadow-soft">
               <p className="text-xs font-bold uppercase tracking-wider text-accent">Центр</p>
-              <p className="font-display text-xl font-extrabold">Engagement Platform</p>
+              <p className="font-display text-xl font-extrabold">Deep Platform</p>
             </div>
             <div className="mt-8 grid w-full gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {integrationNodes.map((item) => (

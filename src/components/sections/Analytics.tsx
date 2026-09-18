@@ -19,7 +19,7 @@ import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function Analytics() {
-  const [tab, setTab] = useState<AnalyticsTab>('Обзор')
+  const [tab, setTab] = useState<AnalyticsTab>('Внутриком')
   const data = analyticsByTab[tab]
 
   return (

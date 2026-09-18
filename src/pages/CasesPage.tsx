@@ -4,10 +4,13 @@ import { cases, casesDisclaimer } from '../data/cases'
 import { useCases } from '../data/useCases'
 import { Button } from '../components/ui/Button'
 import { Reveal } from '../components/ui/Reveal'
+import { useContactModal } from '../context/ContactModalContext'
 
 const accents = ['#FF6B4A', '#2DD4BF', '#7C6CFF', '#F0B429', '#0B3D3A', '#FF6B4A']
 
 export function CasesPage() {
+  const { openModal } = useContactModal()
+
   return (
   <div className="section-pad py-12 lg:py-16">
     <div className="container-page">
@@ -25,8 +28,8 @@ export function CasesPage() {
           Что уже можно делать на платформе
         </h1>
         <p className="mt-4 text-lg text-ink-soft">
-          HR, sales, обучение и внутренние промо — примеры форматов и механик. Показатели
-          демонстрационные до согласования финальных данных.
+          Внутренние коммуникации, мероприятия, обучение и внешние спецпроекты — примеры
+          форматов и механик. Показатели демонстрационные до согласования финальных данных.
         </p>
       </Reveal>
 
@@ -47,11 +50,6 @@ export function CasesPage() {
                     </p>
                     <h2 className="mt-2 font-display text-2xl font-extrabold">{item.title}</h2>
                   </div>
-                  {item.placeholder ? (
-                    <span className="rounded-md bg-white/15 px-2 py-1 text-[10px] font-bold uppercase">
-                      Demo
-                    </span>
-                  ) : null}
                 </div>
               </div>
               <dl className="grid gap-3 p-6 sm:grid-cols-2 sm:p-7">
@@ -71,7 +69,7 @@ export function CasesPage() {
       <Reveal className="mt-14">
         <p className="font-display text-2xl font-extrabold text-ink">Форматы и сценарии</p>
         <p className="mt-2 max-w-2xl text-ink-soft">
-          То, что раньше было «сеткой сценариев» — здесь как справочник поводов для запуска.
+          Выберите подходящий повод — адаптируем сценарий, механику и состав платформы под вашу задачу.
         </p>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {useCases.map((item) => (
@@ -91,9 +89,9 @@ export function CasesPage() {
       <p className="mt-10 text-sm text-muted">{casesDisclaimer}</p>
 
       <div className="mt-8">
-        <Link to="/">
-          <Button>Обсудить похожий проект</Button>
-        </Link>
+        <Button onClick={() => openModal('Хочу обсудить проект, похожий на один из кейсов.')}>
+          Обсудить похожий проект
+        </Button>
       </div>
     </div>
   </div>

@@ -28,7 +28,7 @@ export const platformScreens = [
   },
   {
     id: 'profile',
-    title: 'Профиль сотрудника',
+    title: 'Профиль участника',
     description: 'Баллы, badges, команда и персональные задания',
   },
 ]

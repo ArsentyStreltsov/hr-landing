@@ -17,7 +17,7 @@ export function CasesTeaser() {
           <SectionHeading
             eyebrow="Кейсы"
             title="Примеры проектов на платформе"
-            subtitle="HR-ивенты, промо для сотрудников, обучение и внутренние конкурсы — смотрите форматы и механики."
+            subtitle="Мероприятия, программы лояльности, обучение и спецпроекты — смотрите форматы и механики."
           />
           <Link to="/cases" className="self-start sm:self-auto">
             <Button variant="secondary" className="gap-2">

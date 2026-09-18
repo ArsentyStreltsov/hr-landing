@@ -1,4 +1,5 @@
 import { Hero } from '../components/sections/Hero'
+import { AudienceSegments } from '../components/sections/AudienceSegments'
 import { PlatformOverview } from '../components/sections/PlatformOverview'
 import { Integrations } from '../components/sections/Integrations'
 import { GameMechanics } from '../components/sections/GameMechanics'
@@ -12,12 +13,13 @@ export function LandingPage() {
   return (
     <>
       <Hero />
+      <AudienceSegments />
       <PlatformOverview />
-      <Integrations />
       <GameMechanics />
       <HRProjectConfigurator />
       <PlatformAnalytics />
       <CasesTeaser />
+      <Integrations />
       <FAQ />
       <FinalCTA />
     </>

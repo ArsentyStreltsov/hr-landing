@@ -6,23 +6,37 @@ import { CaseCard, SectionProjectsButton } from './shared'
 
 /** Вариант C: крупный кейс слева, чипы аудиторий и буллиты справа */
 export function SpotlightVariant() {
-  const [activeId, setActiveId] = useState(platformAudiences[1].id)
-  const active =
-    platformAudiences.find((item) => item.id === activeId) ?? platformAudiences[1]
+  const [activeId, setActiveId] = useState(platformAudiences[0].id)
+  const activeIndex = platformAudiences.findIndex((item) => item.id === activeId)
+  const safeIndex = activeIndex >= 0 ? activeIndex : 0
+  const active = platformAudiences[safeIndex]
+
+  function go(delta: number) {
+    const next =
+      (safeIndex + delta + platformAudiences.length) % platformAudiences.length
+    setActiveId(platformAudiences[next].id)
+  }
 
   return (
     <>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <SectionHeading
           eyebrow="Продукт"
-          title="Всё корпоративное событие — внутри одного digital-пространства"
+          title="От одной механики до отдельной платформы"
           subtitle="Сначала повод — потом механика и кейс, который уже делали в похожем формате."
         />
         <SectionProjectsButton />
       </div>
 
       <Reveal className="mt-10 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-        <CaseCard key={active.id} audience={active} />
+        <CaseCard
+          key={active.id}
+          audience={active}
+          index={safeIndex}
+          total={platformAudiences.length}
+          onPrev={() => go(-1)}
+          onNext={() => go(1)}
+        />
 
         <div className="rounded-[1.8rem] border border-line bg-white p-5 shadow-lift sm:p-7">
           <p className="text-xs font-bold uppercase tracking-wider text-muted">Форматы</p>

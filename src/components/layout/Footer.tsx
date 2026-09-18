@@ -7,7 +7,11 @@ export function Footer() {
     <footer className="border-t border-line bg-brand text-white">
       <div className="container-page section-pad grid gap-8 py-12 md:grid-cols-[1.2fr_1fr]">
         <div>
-          <p className="font-display text-2xl font-extrabold">{brand.name}</p>
+          <img
+            src={`${import.meta.env.BASE_URL}deep-logo.png`}
+            alt="Deep creative agency"
+            className="h-12 w-auto"
+          />
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/75">{brand.tagline}</p>
           <p className="mt-3 max-w-md text-xs text-white/55">{brand.templatesNote}</p>
         </div>
@@ -22,9 +26,9 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page section-pad flex flex-col gap-2 py-4 text-xs text-white/55 sm:flex-row sm:justify-between">
           <span>
-            © {new Date().getFullYear()} {brand.name}. Прототип лендинга.
+            © {new Date().getFullYear()} {brand.name}.
           </span>
-          <span>Тестовое название бренда — легко заменить.</span>
+          <span>Интерактивные проекты под ключ.</span>
         </div>
       </div>
     </footer>

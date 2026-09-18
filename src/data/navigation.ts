@@ -6,9 +6,9 @@ export type NavItem = {
 }
 
 export const navItems: NavItem[] = [
-  { id: 'platform', label: 'Возможности', href: '/#capabilities' },
-  { id: 'games', label: 'Игры', href: '/#games' },
-  { id: 'integrations', label: 'Интеграции', href: '/#integrations' },
+  { id: 'platform', label: 'Что делаем', href: '/#capabilities' },
+  { id: 'games', label: 'Механики', href: '/#games' },
   { id: 'cases', label: 'Кейсы', href: '/cases' },
+  { id: 'integrations', label: 'Интеграции', href: '/#integrations' },
   { id: 'faq', label: 'FAQ', href: '/#faq' },
 ]

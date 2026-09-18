@@ -29,7 +29,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             className="font-display text-sm font-bold uppercase tracking-[0.22em] text-brand"
           >
-            {brand.name}
+            Digital-продукты под ключ
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
@@ -80,9 +80,9 @@ export function Hero() {
             </div>
             <div className="space-y-3 p-4">
               <div className="rounded-xl bg-brand p-4 text-white">
-                <p className="text-xs uppercase tracking-wider text-white/70">Corporate Digital Event</p>
-                <p className="mt-1 font-display text-xl font-bold">Привет, команда!</p>
-                <p className="mt-2 text-sm text-white/80">До начала трансляции 01:23:45</p>
+                <p className="text-xs uppercase tracking-wider text-white/70">Interactive Experience</p>
+                <p className="mt-1 font-display text-xl font-bold">Добро пожаловать!</p>
+                <p className="mt-2 text-sm text-white/80">Новая активность уже доступна</p>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div className="rounded-xl bg-paper-2 p-3">
@@ -105,7 +105,7 @@ export function Hero() {
           </div>
 
           {[
-            { label: 'Leaderboard', className: 'left-2 top-8 rotate-[-6deg]' },
+            { label: 'Рейтинг', className: 'left-2 top-8 rotate-[-6deg]' },
             { label: 'LIVE', className: 'right-2 top-16 rotate-[5deg]' },
             { label: 'Награда', className: 'left-4 bottom-16 rotate-[4deg]' },
             { label: 'Мобильная игра', className: 'right-3 bottom-10 rotate-[-4deg]' },

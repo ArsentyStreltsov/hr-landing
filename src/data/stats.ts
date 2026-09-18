@@ -12,13 +12,13 @@ export const demoStats = {
   budgetPhrase:
     'Платформа для всей компании — за бюджет одного большого корпоративного мероприятия',
   heroFloats: [
-    '12 000 сотрудников',
+    '12 000 участников',
     '18 регионов',
     'LIVE',
     '+150 баллов',
     'Команда #1',
     'Новый уровень',
-    'Интеграция с HR',
+    'Интеграция по API',
     'SSO',
   ],
   analytics: {
@@ -32,9 +32,20 @@ export const demoStats = {
   },
 }
 
-export type AnalyticsTab = 'Обзор' | 'Игры' | 'LIVE' | 'Регионы'
+export type AnalyticsTab =
+  | 'Внутриком'
+  | 'Офлайн-ивент'
+  | 'Обучение'
+  | 'Внешний спецпроект'
+  | 'Мерч-шоп'
 
-export const analyticsTabs: AnalyticsTab[] = ['Обзор', 'Игры', 'LIVE', 'Регионы']
+export const analyticsTabs: AnalyticsTab[] = [
+  'Внутриком',
+  'Офлайн-ивент',
+  'Обучение',
+  'Внешний спецпроект',
+  'Мерч-шоп',
+]
 
 export const analyticsByTab: Record<
   AnalyticsTab,
@@ -45,14 +56,14 @@ export const analyticsByTab: Record<
     color: string
   }
 > = {
-  Обзор: {
+  Внутриком: {
     color: '#FF6B4A',
     chartLabel: 'Активность по дням',
     metrics: [
       { label: 'Участники', value: 8430 },
       { label: 'Participation rate', value: 74, suffix: '%' },
       { label: 'Игровые сессии', value: 31420 },
-      { label: 'Активностей на сотрудника', value: 4.7, decimals: 1 },
+      { label: 'Активностей на участника', value: 4.7, decimals: 1 },
     ],
     chart: [
       { name: 'Пн', value: 420 },
@@ -64,14 +75,14 @@ export const analyticsByTab: Record<
       { name: 'Вс', value: 300 },
     ],
   },
-  Игры: {
+  'Офлайн-ивент': {
     color: '#2DD4BF',
-    chartLabel: 'Игровые сессии по дням',
+    chartLabel: 'QR-активности по часам',
     metrics: [
-      { label: 'Игроки', value: 6210 },
-      { label: 'Completion rate', value: 68, suffix: '%' },
-      { label: 'Игровые сессии', value: 31420 },
-      { label: 'Среднее время, мин', value: 6.4, decimals: 1 },
+      { label: 'Участники', value: 2840 },
+      { label: 'Сканирования QR', value: 12640 },
+      { label: 'Пройдено зон', value: 8720 },
+      { label: 'Среднее активностей', value: 4.5, decimals: 1 },
     ],
     chart: [
       { name: 'Пн', value: 2800 },
@@ -83,14 +94,14 @@ export const analyticsByTab: Record<
       { name: 'Вс', value: 5920 },
     ],
   },
-  LIVE: {
+  Обучение: {
     color: '#7C6CFF',
-    chartLabel: 'Зрители и реакции по дням',
+    chartLabel: 'Прохождение модулей',
     metrics: [
-      { label: 'Просмотры LIVE', value: 6120 },
-      { label: 'Досмотр эфира', value: 61, suffix: '%' },
-      { label: 'Реакции', value: 48200 },
-      { label: 'Вопросов ведущему', value: 864 },
+      { label: 'Начали обучение', value: 6120 },
+      { label: 'Завершили', value: 71, suffix: '%' },
+      { label: 'Средний балл', value: 82, suffix: '%' },
+      { label: 'Выполнено заданий', value: 18460 },
     ],
     chart: [
       { name: 'Пн', value: 980 },
@@ -102,14 +113,14 @@ export const analyticsByTab: Record<
       { name: 'Вс', value: 540 },
     ],
   },
-  Регионы: {
+  'Внешний спецпроект': {
     color: '#0B3D3A',
-    chartLabel: 'Активность по регионам',
+    chartLabel: 'Целевые действия по каналам',
     metrics: [
-      { label: 'Регионов онлайн', value: 18 },
-      { label: 'Топ-регион share', value: 22, suffix: '%' },
-      { label: 'Городов в рейтинге', value: 47 },
-      { label: 'Средний participation', value: 71, suffix: '%' },
+      { label: 'Уникальные участники', value: 18430 },
+      { label: 'Конверсия в участие', value: 22, suffix: '%' },
+      { label: 'Целевые действия', value: 4760 },
+      { label: 'Повторные визиты', value: 38, suffix: '%' },
     ],
     chart: [
       { name: 'МСК', value: 2100 },
@@ -119,6 +130,25 @@ export const analyticsByTab: Record<
       { name: 'НСК', value: 760 },
       { name: 'РНД', value: 640 },
       { name: 'др.', value: 1660 },
+    ],
+  },
+  'Мерч-шоп': {
+    color: '#F0B429',
+    chartLabel: 'Заказы по дням',
+    metrics: [
+      { label: 'Открыли витрину', value: 5240 },
+      { label: 'Оформили заказ', value: 1860 },
+      { label: 'Баллов потрачено', value: 428000 },
+      { label: 'Товаров в витрине', value: 48 },
+    ],
+    chart: [
+      { name: 'Пн', value: 180 },
+      { name: 'Вт', value: 240 },
+      { name: 'Ср', value: 310 },
+      { name: 'Чт', value: 280 },
+      { name: 'Пт', value: 390 },
+      { name: 'Сб', value: 250 },
+      { name: 'Вс', value: 210 },
     ],
   },
 }

@@ -7,10 +7,10 @@ import { Reveal } from '../ui/Reveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
 function estimateTimeline(moduleCount: number) {
-  if (moduleCount <= 1) return '~1 месяц'
-  if (moduleCount <= 3) return '~2–3 месяца'
-  if (moduleCount <= 5) return '~3–4 месяца'
-  return '~5–6 месяцев'
+  if (moduleCount <= 1) return 'от 1 недели'
+  if (moduleCount <= 3) return '2–4 недели'
+  if (moduleCount <= 5) return '4–6 недель'
+  return '6–8 недель'
 }
 
 export function HRProjectConfigurator() {
@@ -52,8 +52,8 @@ export function HRProjectConfigurator() {
       : ''
 
     return {
-      title: `${task[0].toUpperCase()}${task.slice(1)} для ${sizeLabel} сотрудников`,
-      body: `Сотрудники ${auth}, ${teamPart}. В течение кампании они ${gamePart}.${livePart}`,
+      title: `${task[0].toUpperCase()}${task.slice(1)} для ${sizeLabel} участников`,
+      body: `Участники ${auth}, ${teamPart}. В течение проекта они ${gamePart}.${livePart}`,
       modules: [
         integration !== 'нет' ? integration.toUpperCase() : null,
         modules.includes('команды') ? 'Команды' : null,
@@ -63,6 +63,7 @@ export function HRProjectConfigurator() {
         modules.includes('награды') ? 'Награды' : null,
         modules.includes('задания') ? 'Задания' : null,
         modules.includes('пользовательский контент') ? 'UGC' : null,
+        modules.includes('Telegram / бот-webapp') ? 'Telegram web app' : null,
       ].filter(Boolean) as string[],
       timeline: estimateTimeline(modules.length),
     }
@@ -72,9 +73,9 @@ export function HRProjectConfigurator() {
     <section className="section-pad py-16 lg:py-24">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Главный интерактив"
-          title="Соберите пример HR-проекта"
-          subtitle={`Конфигуратор демонстрационный: не считает стоимость, но помогает собрать пример сценария. ${brand.templatesNote}`}
+          eyebrow="Конфигуратор"
+          title="Соберите пример своего проекта"
+          subtitle={`Выберите задачу, масштаб и модули — покажем возможный сценарий. ${brand.templatesNote}`}
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -86,7 +87,7 @@ export function HRProjectConfigurator() {
                 onChange={setTask}
               />
             </Step>
-            <Step title="2. Сколько сотрудников?">
+            <Step title="2. Сколько участников?">
               <ChipGroup
                 options={configuratorOptions.sizes}
                 value={size}

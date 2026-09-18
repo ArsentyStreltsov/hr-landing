@@ -26,7 +26,7 @@ const adminMetrics = [
 ]
 
 export function PlatformAnalytics() {
-  const [tab, setTab] = useState<AnalyticsTab>('Обзор')
+  const [tab, setTab] = useState<AnalyticsTab>('Внутриком')
   const data = analyticsByTab[tab]
 
   return (
@@ -34,8 +34,8 @@ export function PlatformAnalytics() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Аналитика и админка"
-          title="Не «сколько человек пришло», а как участники вовлекались"
-          subtitle={`${demoStats.analytics.disclaimer} Состав панели определяется под проект — управлять может агентство, клиент или обе стороны.`}
+          title="Следите за проектом в реальном времени"
+          subtitle={`Предоставляем постоянный доступ к ключевым показателям на всём протяжении проекта. Панель адаптируем под ваш сценарий. ${demoStats.analytics.disclaimer}`}
         />
 
         <div className="mt-8 flex flex-wrap gap-2">
@@ -92,9 +92,9 @@ export function PlatformAnalytics() {
 
           <div className="border-t border-line bg-paper p-5 lg:p-7">
             <div className="mb-4 flex items-center justify-between gap-3">
-              <p className="font-display text-lg font-bold text-ink">Admin · пример панели</p>
+              <p className="font-display text-lg font-bold text-ink">Админка · пример панели</p>
               <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-muted">
-                Demo data
+                Демо-данные
               </span>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

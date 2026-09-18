@@ -1,20 +1,17 @@
 export const integrationNodes = [
-  { id: 'ats', label: 'ATS', example: 'Huntflow' },
-  { id: 'hris', label: 'HRIS', example: 'SAP SuccessFactors' },
-  { id: 'lms', label: 'LMS', example: 'Корпоративный LMS' },
-  { id: 'portal', label: 'Корпоративный портал', example: 'Intranet' },
-  { id: 'sso', label: 'SSO', example: 'Корпоративная авторизация' },
-  { id: 'teams', label: 'Teams / коммуникации', example: 'Microsoft 365' },
-  { id: 'bi', label: 'BI', example: 'Аналитика клиента' },
-  { id: 'crm', label: 'CRM', example: 'Salesforce / amoCRM' },
-  { id: 'custom', label: 'Собственные системы', example: 'API клиента' },
+  { id: 'domain', label: 'Отдельный домен', example: 'Полностью автономный запуск' },
+  { id: 'subdomain', label: 'Ваш поддомен', example: 'project.company.ru' },
+  { id: 'embed', label: 'Внутренний сервис', example: 'Портал / приложение / webview' },
+  { id: 'business', label: 'Бизнес-системы', example: 'CRM / HRIS / LMS / ATS' },
+  { id: 'access', label: 'Вход и коммуникации', example: 'SSO / Telegram / email' },
+  { id: 'custom', label: 'Любой доступный API', example: 'Собственные сервисы клиента' },
 ]
 
 export const integrationDisclaimer =
   'Примеры систем с доступными API. Возможность и объём конкретной интеграции определяются после технического анализа.'
 
 export const integrationPrinciple =
-  'Подключаем платформу к вашей инфраструктуре: через API, webhooks, SSO или кастомный сценарий онбординга — в HR-систему, CRM, портал, LMS и внутренние сервисы компании.'
+  'Проект может жить на отдельном домене, на вашем поддомене или внутри существующего сервиса. Обмен данными настраиваем через API, webhooks и SSO.'
 
 export const integrationHighlight =
-  'Не заставляем людей вручную переносить данные. Если у системы есть технический доступ — проектируем обмен под задачу проекта.'
+  'Если у системы есть технический доступ, проектируем обмен данными под задачу и пользовательский путь.'
